@@ -1,6 +1,6 @@
 import sys
 
-def bestfit(vm[], node[]):
+def bestfit(vm, node):
 	resultNode = None
 	currentRatio = 1.0
 	for n in node:
@@ -14,7 +14,7 @@ def bestfit(vm[], node[]):
 				resultNode = nodeName
 	return resultNode
 
-def bestfitwithmigration(vm[], node[]):
+def bestfitwithmigration(vm, node):
 	detailedVM = []
 	resultNode = None
 	minMigrationList = []
@@ -32,7 +32,7 @@ def bestfitwithmigration(vm[], node[]):
 			vmList = detailedVM
 			for v in vmList:
 				destNode = bestfit(v, node - n)
-				if destNode = 'None':
+				if destNode == 'None':
 					continue
 				else:
 					localMigrationList.append([v,destNode])
@@ -54,4 +54,3 @@ def bestfitwithmigration(vm[], node[]):
 					minMigrationData = localMigrationData
 					minMigrationList = localMigrationList
 					resultNode = n.nodeName
-					
